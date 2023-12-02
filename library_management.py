@@ -30,16 +30,11 @@ class Library:
     
     # Arrange The function, this function can be written in 3-4 lines remove this existing
     def count(self):
-        print(f'The Library has {self.numofbooks} books')
-        if (len(self.books) == self.numofbooks):
-            print(f"The Number of books in book list is: {len(self.books)}")
-            print(f'The Length of books is {len(self.books)}')
-            print(f"The Number in length of book is also same {self.numofbooks}")
+        print(f'The Library has {len(self.books)} books. The no of book in the list is {self.numofbooks}')
+        if len(self.books) != self.numofbooks:
+            print("Both list are different. They have different Length")
         else:
-            print('There is a problem in both list')
-            print(f'The num of books in book list: {len(self.books)}')
-            print(f'The Number in length of books is: {self.numofbooks}')
-            print('Both are different')
+            print('All books in book list and numofbooks is same')
             
     def remove_book(self):
         lib.show_books()
@@ -50,8 +45,9 @@ class Library:
 
 lib = Library()
 
+
 while True:
-    choice = int(input('\nWelcome to Library Management System\n1) Add Books\n2) Show Books\n3) Remove Books\n4) Count the Book List and Length of books\nEnter the option '))
+    choice = int(input('\nWelcome to Library Management System\n1) Add Books\n2) Show Books\n3) Remove Books\n4) Count the Book List and Length of books\n5) Exit\nEnter the option:- '))
     if choice == 1:
         lib.add()
     elif choice == 2:
@@ -61,6 +57,8 @@ while True:
     elif choice == 4:
         lib.count()
     elif choice == 5:
-        pass
-    else:
         break
+    else:
+        print('Invalid Input')
+        choice = int(input('\nWelcome to Library Management System\n1) Add Books\n2) Show Books\n3) Remove Books\n4) Count the Book List and Length of books\n5) Exit\nEnter the option:- '))
+        
